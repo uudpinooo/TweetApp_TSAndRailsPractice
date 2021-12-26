@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
     tweets = Tweet.all
     render json: {
       tweets: tweets
-    }
+    }, status: :ok
   end
 
   def show
