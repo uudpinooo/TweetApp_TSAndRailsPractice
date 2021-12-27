@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def create
-    user = User.find_by(email: session_params[:email])
+    user = User.find_by_email(session_params[:email])
 
     if user&.authenticate(session_params[:password])
       session[:user_id] = user.id
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete(:user_id)
+    reset_session
     render status: :no_content
   end
 
