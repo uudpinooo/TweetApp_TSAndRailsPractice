@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   def index
     users = User.all
     render json: {
-      users: users
+      users: users,
+      testshow: current_user
     }, status: :ok
   end
 
