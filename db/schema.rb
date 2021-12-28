@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_27_170529) do
+ActiveRecord::Schema.define(version: 2021_12_28_163357) do
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "tweet_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tweet_id", "user_id"], name: "index_favorites_on_tweet_id_and_user_id", unique: true
+    t.index ["tweet_id"], name: "index_favorites_on_tweet_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
 
   create_table "sessions", force: :cascade do |t|
     t.string "session_id", null: false
@@ -39,5 +49,7 @@ ActiveRecord::Schema.define(version: 2021_12_27_170529) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "favorites", "tweets"
+  add_foreign_key "favorites", "users"
   add_foreign_key "tweets", "users"
 end
