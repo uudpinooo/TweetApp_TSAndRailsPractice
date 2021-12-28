@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   def index
-    tweets = Tweet.all
+    tweets = current_user.tweets.all
     render json: {
       tweets: tweets
     }, status: :ok
@@ -14,19 +14,19 @@ class TweetsController < ApplicationController
   end
 
   def create
-    tweet = Tweet.new(tweet_params)
+    tweet = current_user.tweets.new(text: tweet_params[:text], user_id: current_user.id)
     tweet.save!
     render status: :created
   end
 
   def update
-    tweet = Tweet.find(params[:id])
-    tweet.update!(tweet_params)
+    tweet = current_user.tweets.find(params[:id])
+    tweet.update!(text: tweet_params[:text], user_id: current_user.id)
     render status: :ok
   end
 
   def destroy
-    tweet = Tweet.find(params[:id])
+    tweet = current_user.tweets..find(params[:id])
     tweet.destroy
     render status: :no_content
   end
@@ -34,6 +34,6 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-    params.permit(:text, :user_id)
+    params.permit(:text)
   end
 end

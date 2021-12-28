@@ -2,8 +2,7 @@ class UsersController < ApplicationController
   def index
     users = User.all
     render json: {
-      users: users,
-      testshow: current_user
+      users: users
     }, status: :ok
   end
 
@@ -21,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
+    user = User.find(current_user.id)
     user.update!(user_params)
     render status: :ok
   end
