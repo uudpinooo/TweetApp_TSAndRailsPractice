@@ -6,15 +6,15 @@ Rails.application.routes.draw do
   # usersのルーティング
   scope module: :users do
     resources :users, only: [:index, :show, :create, :update, :destroy] do
-      resources :favorite, only: [:index, :create, :destroy]
+      resources :favorites, only: [:index]
     end
   end
 
   # tweetsのルーティング
   scope module: :tweets do
     resources :tweets, only: [:index, :show, :create, :update, :destroy] do
-      get "/favorite", to: "favorite#index"
-      resources :favorites, only: [:index]
+      resources :favorites, only: [:index, :create]
+      delete "favorites", to: "favorites#destroy"
     end
   end
 end

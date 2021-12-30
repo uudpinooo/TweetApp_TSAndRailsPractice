@@ -4,5 +4,5 @@ class Favorite < ApplicationRecord
 
   validates :tweet_id, presence: true, numericality: { only_integer: true }
   validates :user_id, presence: true, numericality: { only_integer: true }
-  validates: tweet_id, uniqueness: { scope: :user_id }
+  validates :tweet_id, uniqueness: { scope: :user_id }
 end
