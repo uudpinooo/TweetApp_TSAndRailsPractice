@@ -1,6 +1,10 @@
 class Tweets::TweetsController < ApplicationController
   def index
     tweets = current_user.tweets.all
+    tweets.each do |tweet|
+      tweet["favorite_count"] = tweet.favorites.count
+    end
+
     render json: {
       tweets: tweets
     }, status: :ok
@@ -8,6 +12,7 @@ class Tweets::TweetsController < ApplicationController
 
   def show
     tweet = Tweet.find(params[:id])
+    tweet["favorite_count"] = tweet.favorites.count
     render json: {
       tweet: tweet
     }, status: :ok
