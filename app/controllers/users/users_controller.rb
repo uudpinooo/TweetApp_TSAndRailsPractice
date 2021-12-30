@@ -7,7 +7,7 @@ class Users::UsersController < ApplicationController
   end
 
   def show
-    user = User.find(params[:id])
+    user = User.find(user_id_params[:id])
     render json: {
       user: user
     }, status: :ok
@@ -26,13 +26,18 @@ class Users::UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
+    user = User.find(user_id_params[:id])
     user.destroy
     render status: :no_content
   end
 
   private
+
   def user_params
     params.permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def user_id_params
+    params.permit(:id)
   end
 end

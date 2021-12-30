@@ -1,6 +1,6 @@
 class Users::FavoritesController < ApplicationController
   def index
-    favorites = Favorite.where(user_id: favorite_params[:user_id])
+    favorites = Favorite.where(user_id: favorite_id_params[:user_id])
     render json: {
       favorites: favorites
     }, status: :ok
@@ -8,7 +8,7 @@ class Users::FavoritesController < ApplicationController
 
   private
 
-  def favorite_params
+  def favorite_id_params
     params.permit(:user_id)
   end
 end
