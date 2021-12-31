@@ -14,8 +14,9 @@ Rails.application.routes.draw do
 
   # tweetsのルーティング
   scope module: :tweets do
+    get "/tweets/mine", to: "tweets#index_my_tweets"
     resources :tweets, only: [:index, :show, :create, :update, :destroy] do
-      resources :favorites, only: [:index, :create]
+      resources :favorites, only: [:create]
       delete "favorites", to: "favorites#destroy"
     end
   end
