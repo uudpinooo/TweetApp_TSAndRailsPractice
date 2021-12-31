@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   scope module: :users do
     resources :users, only: [:index, :show, :create, :update, :destroy] do
       resources :favorites, only: [:index]
+      get "followings", to: "follows#index_followings"
+      get "followers", to: "follows#index_followers"
     end
   end
 
@@ -16,5 +18,11 @@ Rails.application.routes.draw do
       resources :favorites, only: [:index, :create]
       delete "favorites", to: "favorites#destroy"
     end
+  end
+
+  # followsのルーティング
+  scope :follows do
+    post "/:id", to: "follows#create"
+    delete "/:id", to: "follows#destroy"
   end
 end
