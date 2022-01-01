@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   # usersのルーティング
   scope module: :users do
-    resources :users, only: [:index, :show, :create, :update, :destroy] do
+    patch "/users", to: "users#update"
+    resources :users, only: [:index, :show, :create, :destroy] do
       resources :favorites, only: [:index]
       get "followings", to: "follows#index_followings"
       get "followers", to: "follows#index_followers"
