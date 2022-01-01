@@ -1,11 +1,11 @@
 class Tweets::TweetsController < ApplicationController
-  def index
+  def index_time_line
     followings_ids = current_user.followings.pluck(:id)
     followings_and_my_ids = followings_ids << current_user.id
-    tweets = followings_ids.map do |id|
+    tweets = (followings_ids.map do |id|
       Tweet.where(user_id: id)
-    end
-    tweets.flatten.each do |tweet|
+    end).flatten
+    tweets.each do |tweet|
       tweet["favorite_count"] = tweet.favorites.count
     end
 
@@ -14,8 +14,9 @@ class Tweets::TweetsController < ApplicationController
     }, status: :ok
   end
 
-  def index_my_tweets
-    tweets = current_user.tweets.all
+  def index
+    user = User.find(user_id_params[:user_id])
+    tweets = user.tweets.all
     tweets.each do |tweet|
       tweet["favorite_count"] = tweet.favorites.count
     end
@@ -59,5 +60,9 @@ class Tweets::TweetsController < ApplicationController
 
   def tweet_id_params
     params.permit(:id)
+  end
+
+  def user_id_params
+    params.permit(:user_id)
   end
 end
