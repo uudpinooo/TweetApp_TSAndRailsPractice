@@ -1,5 +1,20 @@
 class Tweets::TweetsController < ApplicationController
   def index
+    followings_ids = current_user.followings.pluck(:id)
+    followings_and_my_ids = followings_ids << current_user.id
+    tweets = followings_ids.map do |id|
+      Tweet.where(user_id: id)
+    end
+    tweets.flatten.each do |tweet|
+      tweet["favorite_count"] = tweet.favorites.count
+    end
+
+    render json: {
+      tweets: tweets
+    }, status: :ok
+  end
+
+  def index_my_tweets
     tweets = current_user.tweets.all
     tweets.each do |tweet|
       tweet["favorite_count"] = tweet.favorites.count
