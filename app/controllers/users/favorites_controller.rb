@@ -1,8 +1,12 @@
 class Users::FavoritesController < ApplicationController
   def index
-    favorites = Favorite.where(user_id: favorite_id_params[:user_id])
+    favorite_logs = Favorite.where(user_id: favorite_id_params[:user_id])
+    favorites = favorite_logs.map do |favorite_log|
+      Tweet.where(id: favorite_log.tweet_id)
+    end
+
     render json: {
-      favorites: favorites
+      favorites: favorites.flatten
     }, status: :ok
   end
 
