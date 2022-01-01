@@ -15,7 +15,7 @@ class Tweets::TweetsController < ApplicationController
   end
 
   def index
-    user = User.find(user_id_params[:user_id])
+    user = User.find(tweet_params[:user_id])
     tweets = user.tweets.all
     tweets.each do |tweet|
       tweet["favorite_count"] = tweet.favorites.count
@@ -27,7 +27,7 @@ class Tweets::TweetsController < ApplicationController
   end
 
   def show
-    tweet = Tweet.find(tweet_id_params[:id])
+    tweet = Tweet.find(tweet_params[:id])
     tweet["favorite_count"] = tweet.favorites.count
     render json: {
       tweet: tweet
@@ -41,13 +41,13 @@ class Tweets::TweetsController < ApplicationController
   end
 
   def update
-    tweet = current_user.tweets.find(tweet_id_params[:id])
+    tweet = current_user.tweets.find(tweet_params[:id])
     tweet.update!(text: tweet_params[:text], user_id: current_user.id)
     render status: :ok
   end
 
   def destroy
-    tweet = current_user.tweets..find(tweet_id_params[:id])
+    tweet = current_user.tweets.find(tweet_params[:id])
     tweet.destroy
     render status: :no_content
   end
@@ -55,14 +55,6 @@ class Tweets::TweetsController < ApplicationController
   private
 
   def tweet_params
-    params.permit(:text)
-  end
-
-  def tweet_id_params
-    params.permit(:id)
-  end
-
-  def user_id_params
-    params.permit(:user_id)
+    params.permit(:text, :id, :user_id)
   end
 end
