@@ -15,9 +15,7 @@
     "moduleResolution": "node",
     "jsx": "react-jsx",
     "allowJs": true,
-    "types":["@emotion/react/types/css-prop"],
+    "types": ["@emotion/react/types/css-prop"]
   },
-  "exclude": [
-    "./dist/**/*",
-]
+  "exclude": ["./dist/**/*"]
 }

@@ -1,3 +1,4 @@
 import ReactDOM from "react-dom";
+import { Page } from "./components/Page";
 
-ReactDOM.render(<div>Hello TS!</div>, document.getElementById("app"));
+ReactDOM.render(<Page />, document.getElementById("app"));
