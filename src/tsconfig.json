@@ -17,6 +17,6 @@
     "allowJs": true
   },
   "exclude": [
-    "./dist/**/*"
+    "./dist/**/*",
 ]
 }

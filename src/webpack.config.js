@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use strinct"
 const { resolve } = require("path");
 
