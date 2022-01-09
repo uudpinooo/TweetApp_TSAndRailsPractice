@@ -3,7 +3,7 @@
 
 import { Fragment } from "react";
 import { jsx, css } from "@emotion/react";
-import { COLORS } from "../style_constants";
+import { COLORS } from "../../style_constants";
 
 export const Header = () => {
   return (

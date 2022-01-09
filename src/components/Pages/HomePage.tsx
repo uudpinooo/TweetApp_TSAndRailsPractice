@@ -2,11 +2,11 @@
 /** @jsxImportSource @emotion/react */
 
 import { jsx, css } from "@emotion/react";
-import { COLORS } from "../style_constants";
-import { Header } from "./Header";
-import { Home } from "./Home";
+import { COLORS } from "../../style_constants";
+import { Header } from "../Layouts/Header";
+import { Home } from "../Homes/Home";
 
-export const Page = () => {
+export const HomePage = () => {
   return (
     <div css={pageStyle}>
       <Header />

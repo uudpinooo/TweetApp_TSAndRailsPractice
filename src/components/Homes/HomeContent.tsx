@@ -3,7 +3,7 @@
 
 import { jsx, css } from "@emotion/react";
 import { Fragment, VFC } from "react";
-import { COLORS } from "../style_constants";
+import { COLORS } from "../../style_constants";
 import { IconButton } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 // import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
