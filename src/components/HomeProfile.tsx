@@ -2,7 +2,6 @@
 /** @jsxImportSource @emotion/react */
 
 import { jsx, css } from "@emotion/react";
-import { COLORS } from "../style_constants";
 
 export const HomeProfile = () => {
   return (
@@ -21,7 +20,6 @@ export const HomeProfile = () => {
 
 const profileStyle = css`
   display: flex;
-  border-bottom: ${COLORS.BORDER} 1px solid;
   height: 160px;
   padding: 30px;
   justify-content: space-between;
