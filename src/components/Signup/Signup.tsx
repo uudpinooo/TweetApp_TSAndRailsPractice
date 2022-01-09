@@ -4,15 +4,15 @@
 import { jsx, css } from "@emotion/react";
 import { COLORS } from "../../style_constants";
 
-export const Signin = () => {
+export const Signup = () => {
   return (
     <div css={signinStyle}>
       <input type="text" placeholder="メールアドレス" css={inputStyle} />
       <input type="text" placeholder="パスワード" css={inputStyle} />
-      <div css={buttonStyle}>ログイン</div>
+      <div css={buttonStyle}>アカウント作成</div>
       <br />
       <p>
-        アカウント新規作成は<a href="" css={linkStyle}>こちら</a>
+        ログインは<a href="" css={linkStyle}>こちら</a>
       </p>
     </div>
   );
