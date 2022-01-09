@@ -2,6 +2,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { jsx, css } from "@emotion/react";
+import { IMAGE_SIZE } from "../../style_constants";
 
 export const HomeProfile = () => {
   return (
@@ -30,8 +31,8 @@ const imageContainerStyle = css`
 `;
 
 const imageStyle = css`
-  width: 120px;
-  height: 120px;
+  width: ${IMAGE_SIZE.LARGE}px;
+  height: ${IMAGE_SIZE.LARGE}px;
   border-radius: 50%;
   background-color: skyblue;
 `;

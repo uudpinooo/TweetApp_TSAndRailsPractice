@@ -6,7 +6,7 @@ import { COLORS } from "../../style_constants";
 import { Header } from "../Layouts/Header";
 import { Home } from "../Homes/Home";
 
-export const HomePage = () => {
+export const HomesPage = () => {
   return (
     <div css={pageStyle}>
       <Header />

@@ -3,7 +3,7 @@
 
 import { jsx, css } from "@emotion/react";
 import { Fragment, VFC } from "react";
-import { COLORS } from "../../style_constants";
+import { COLORS, IMAGE_SIZE } from "../../style_constants";
 import { IconButton } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 // import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -50,8 +50,8 @@ const imageContainerStyle = css`
 `;
 
 const imageStyle = css`
-  width: 60px;
-  height: 60px;
+  width: ${IMAGE_SIZE.SMALL}px;
+  height: ${IMAGE_SIZE.SMALL}px;
   border-radius: 50%;
   background-color: skyblue;
 `;

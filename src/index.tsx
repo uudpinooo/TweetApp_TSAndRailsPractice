@@ -1,4 +1,5 @@
 import ReactDOM from "react-dom";
-import { HomePage } from "./components/Pages/HomePage";
+import { FollowingsPage } from "./components/Pages/FollowingsPage";
+// import { HomesPage } from "./components/Pages/Homesage";
 
-ReactDOM.render(<HomePage />, document.getElementById("app"));
+ReactDOM.render(<FollowingsPage />, document.getElementById("app"));

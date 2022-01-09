@@ -4,7 +4,7 @@
 import { jsx, css } from "@emotion/react";
 import { COLORS } from "../../style_constants";
 
-export const HomeMenu = () => {
+export const HomeMenus = () => {
   return (
     <div css={menusStyle}>
       <div css={menuStyle(true)} className="selected">タイムライン</div>
