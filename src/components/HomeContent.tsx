@@ -4,6 +4,9 @@
 import { jsx, css } from "@emotion/react";
 import { Fragment, VFC } from "react";
 import { COLORS } from "../style_constants";
+import { IconButton } from "@mui/material";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+// import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 export const HomeContent: VFC = () => {
   return (
@@ -20,7 +23,12 @@ export const HomeContent: VFC = () => {
                 今日は浜松にいって餃子とスタバを食べました。みんなに会えて嬉しかったです。また来年もあつまれたらいいなあ😊明日は特に予定がないのでゆっくりします！
               </p>
               <p>2021/12/30 22:00</p>
-              <p>5いいね</p>
+              <p>
+                <IconButton>
+                  <FavoriteIcon css={buttonStyle} />
+                </IconButton>
+                5いいね
+              </p>
             </div>
           </div>
         );
@@ -53,4 +61,8 @@ const contentStyle = css`
   flex-direction: column;
   align-items: center;
   flex: 5;
+`;
+
+const buttonStyle = css`
+  color: red;
 `;
