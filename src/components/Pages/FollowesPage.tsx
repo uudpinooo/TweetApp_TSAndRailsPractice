@@ -3,16 +3,16 @@
 
 import { jsx, css } from "@emotion/react";
 import { COLORS } from "../../style_constants";
-import { Followings } from "../Followings/Followings";
-import { FollowingMenus } from "../Followings/FollowingsMenus";
+import { Followers } from "../Followers/Followers";
+import { FollowersMenus } from "../Followers/FollowersMenus";
 import { Header } from "../Layouts/Header";
 
-export const FollowingsPage = () => {
+export const FollowersPage = () => {
   return (
     <div css={pageStyle}>
       <Header />
-      <FollowingMenus />
-      <Followings />
+      <FollowersMenus />
+      <Followers />
     </div>
   );
 };

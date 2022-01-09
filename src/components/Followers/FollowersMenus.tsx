@@ -4,11 +4,11 @@
 import { jsx, css } from "@emotion/react";
 import { COLORS } from "../../style_constants";
 
-export const FollowingMenus = () => {
+export const FollowersMenus = () => {
   return (
     <div css={menusStyle}>
-      <div css={menuStyle(true)}>フォロー中</div>
-      <div css={menuStyle(false)}>フォロワー</div>
+      <div css={menuStyle(false)}>フォロー中</div>
+      <div css={menuStyle(true)}>フォロワー</div>
     </div>
   );
 };
