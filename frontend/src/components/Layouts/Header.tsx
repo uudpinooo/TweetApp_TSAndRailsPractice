@@ -10,11 +10,10 @@ export const Header = () => {
   return (
     <div css={headerStyle}>
       <div css={menusStyle}>
-        <Link to="/">ヘッダー</Link>
+        <Link to="/">ホーム</Link>
         <Link to="/followings">フォロー中</Link>
         <Link to="/followers">フォロワー</Link>
-        <Link to="/signin">サインイン</Link>
-        <Link to="/signup">サインアップ</Link>
+        <Link to="/signin">ログアウト</Link>
       </div>
     </div>
   );
