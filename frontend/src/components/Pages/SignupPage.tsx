@@ -3,8 +3,8 @@
 // @ts-ignore TS6133: 'jsx' is declared but its value is never read.
 
 import { jsx, css } from "@emotion/react";
-import { COLORS } from "../../style_constants";
-import { Signup } from "../Signup/Signup";
+import { COLORS } from "style_constants";
+import { Signup } from "components/Signup/Signup";
 
 export const SignupPage = () => {
   return (

@@ -4,7 +4,7 @@
 
 import { jsx, css } from "@emotion/react";
 import { Link } from "react-router-dom";
-import { COLORS } from "../../style_constants";
+import { COLORS } from "style_constants";
 
 export const Signup = () => {
   return (

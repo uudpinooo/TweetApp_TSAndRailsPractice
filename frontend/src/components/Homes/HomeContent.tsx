@@ -4,7 +4,7 @@
 
 import { jsx, css } from "@emotion/react";
 import { Fragment, VFC } from "react";
-import { COLORS, IMAGE_SIZE } from "../../style_constants";
+import { COLORS, IMAGE_SIZE } from "style_constants";
 import { IconButton } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 

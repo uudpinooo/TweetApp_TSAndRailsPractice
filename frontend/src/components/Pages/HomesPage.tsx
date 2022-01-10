@@ -3,9 +3,9 @@
 // @ts-ignore TS6133: 'jsx' is declared but its value is never read.
 
 import { jsx, css } from "@emotion/react";
-import { COLORS } from "../../style_constants";
-import { Header } from "../Layouts/Header";
-import { Home } from "../Homes/Home";
+import { Home } from "components/Homes/Home";
+import { Header } from "components/Layouts/Header";
+import { COLORS } from "style_constants";
 
 export const HomesPage = () => {
   return (

@@ -2,10 +2,9 @@
 /** @jsx jsx */
 // @ts-ignore TS6133: 'jsx' is declared but its value is never read.
 
-// @ts-ignore TS6133: 'jsx' is declared but its value is never read.
 import { jsx, css } from "@emotion/react";
 import { Link } from "react-router-dom";
-import { COLORS } from "../../style_constants";
+import { COLORS } from "style_constants";
 
 export const Signin = () => {
   return (

@@ -3,7 +3,7 @@
 // @ts-ignore TS6133: 'jsx' is declared but its value is never read.
 
 import { jsx, css } from "@emotion/react";
-import { COLORS } from "../../style_constants";
+import { COLORS } from "style_constants";
 import { Link } from "react-router-dom";
 
 export const Header = () => {

@@ -3,10 +3,10 @@
 // @ts-ignore TS6133: 'jsx' is declared but its value is never read.
 
 import { jsx, css } from "@emotion/react";
-import { COLORS } from "../../style_constants";
-import { Followers } from "../Followers/Followers";
-import { FollowersMenus } from "../Followers/FollowersMenus";
-import { Header } from "../Layouts/Header";
+import { COLORS } from "style_constants";
+import { Header } from "components/Layouts/Header";
+import { FollowersMenus } from "components/Followers/FollowersMenus";
+import { Followers } from "components/Followers/Followers";
 
 export const FollowersPage = () => {
   return (
