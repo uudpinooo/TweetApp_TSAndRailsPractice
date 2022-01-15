@@ -4,9 +4,11 @@
 
 import { jsx, css } from "@emotion/react";
 import { Fragment, VFC } from "react";
-import { COLORS, IMAGE_SIZE } from "style_constants";
+import { COLORS } from "style_constants";
 import { IconButton } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { ProfileImage } from "components/ui-library/ProfileImage";
+import profileImage from "images/image1.jpg";
 
 export const HomeContent: VFC = () => {
   return (
@@ -15,7 +17,7 @@ export const HomeContent: VFC = () => {
         return (
           <div key={x} css={tweetStyle}>
             <div css={imageContainerStyle}>
-              <div css={imageStyle}></div>
+              <ProfileImage imageSize="small" profileImage={profileImage} />
             </div>
             <div css={contentStyle}>
               <p>ユーザーネーム</p>
@@ -47,13 +49,6 @@ const tweetStyle = css`
 
 const imageContainerStyle = css`
   flex: 1;
-`;
-
-const imageStyle = css`
-  width: ${IMAGE_SIZE.SMALL}px;
-  height: ${IMAGE_SIZE.SMALL}px;
-  border-radius: 50%;
-  background-color: skyblue;
 `;
 
 const contentStyle = css`

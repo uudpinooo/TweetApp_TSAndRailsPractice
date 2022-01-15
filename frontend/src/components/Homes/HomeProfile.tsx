@@ -3,13 +3,14 @@
 // @ts-ignore TS6133: 'jsx' is declared but its value is never read.
 
 import { jsx, css } from "@emotion/react";
-import { IMAGE_SIZE } from "style_constants";
+import { ProfileImage } from "components/ui-library/ProfileImage";
+import profileImage from "images/image1.jpg";
 
 export const HomeProfile = () => {
   return (
     <div css={profileStyle}>
       <div css={imageContainerStyle}>
-        <div css={imageStyle}></div>
+        <ProfileImage imageSize="large" profileImage={profileImage} />
       </div>
       <div css={infoStyle}>
         <p>ユーザーネーム</p>
@@ -29,13 +30,6 @@ const profileStyle = css`
 
 const imageContainerStyle = css`
   flex: 1;
-`;
-
-const imageStyle = css`
-  width: ${IMAGE_SIZE.LARGE}px;
-  height: ${IMAGE_SIZE.LARGE}px;
-  border-radius: 50%;
-  background-color: skyblue;
 `;
 
 const infoStyle = css`

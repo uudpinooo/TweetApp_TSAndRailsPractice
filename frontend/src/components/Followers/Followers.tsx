@@ -3,8 +3,10 @@
 // @ts-ignore TS6133: 'jsx' is declared but its value is never read.
 
 import { jsx, css } from "@emotion/react";
+import { ProfileImage } from "components/ui-library/ProfileImage";
+import profileImage from "images/image2.jpg";
 import { Fragment, VFC } from "react";
-import { COLORS, IMAGE_SIZE } from "style_constants";
+import { COLORS } from "style_constants";
 
 export const Followers: VFC = () => {
   return (
@@ -13,7 +15,7 @@ export const Followers: VFC = () => {
         return (
           <div key={x} css={profileStyle}>
             <div css={imageContainerStyle}>
-              <div css={imageStyle}></div>
+              <ProfileImage imageSize="small" profileImage={profileImage} />
             </div>
             <div css={infoStyle}>
               <p>ユーザーネーム</p>
@@ -37,13 +39,6 @@ const profileStyle = css`
 
 const imageContainerStyle = css`
   flex: 1;
-`;
-
-const imageStyle = css`
-  width: ${IMAGE_SIZE.SMALL}px;
-  height: ${IMAGE_SIZE.SMALL}px;
-  border-radius: 50%;
-  background-color: skyblue;
 `;
 
 const infoStyle = css`
